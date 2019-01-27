@@ -13,17 +13,25 @@
     </head>
     <body>
     <h1>I'm in a glass case of emotion!</h1>
+    
+    <!-- description for the theme of gifs -->
+    <h2>In 1972 American psychologists, Paul Ekman and Wallace V. Friesen identified six basic emotions based on studying the isolated culture of <br>
+        people from the Fori tribe in Papua New Guinea. Overall,they were able to identify these six emotions: Anger, Disgust, Fear, Happines, Sadness, Surprise. <br> 
+        Take a look at these emotions through the use of GIFs! Feel free to add in your own searches based on how you are feeling today!
+    </h2>
 
-
+    <!-- buttons will live here -->
     <div id="buttonsSpace"></div>
 
-    <form id="search-form">
-        <label for="search-input">How are you feeling today?</label>
-        <input type="text" id="search-input"><br>
-        <input id="addSearch" type="submit" value="submit">
+   <!--form for new buttons, and an input where users can add in new gifs to search  -->
+    <form id="searchBox">
+        <label for="newSearch">How are you feeling today?</label>
+        <input type="text" id="user-text"><br>
+        <input id="newSearch" type="submit" value="submit">
     </form>
 
-    <div id="searches"></div>
+<!-- gifs live in this div -->
+    <div id="userSearches"></div>
   
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
     <script type="text/javascript" src="assets/javascript/giftastic.js"></script>
