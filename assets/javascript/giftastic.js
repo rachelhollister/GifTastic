@@ -1,32 +1,41 @@
+console.log("testing here!");
+
+//function when page loads
 $(function(){
-    populateButtons(searchArray,'searchButton','#buttonsSpace');
+    topButtons(topics,'submitButton','#buttonsSpace');
 })
 
-var searchArray = ['anger', 'disgust', 'fear', 'happiness', 'sadness', 'surprise'];
+//topics variable with array of emotions to use
+var topics = ['anger', 'disgust', 'fear', 'happiness', 'sadness', 'surprise'];
 
-function populateButtons(searchArray,classToAdd,areaToAddTo){
-    $(areaToAddTo).empty();
-    for(var i=0;i<searchArray.length;i++){
+//takes in topics variable, classes, and where it will add to on the page
+function topButtons(topics,newGifs,newGifsSpace){
+    $(newGifsSpace).empty();    
+    for(var i=0;i<topics.length;i++){
     var a = $('<button>');
-    a.addClass(classToAdd);
-    a.attr('data-type',searchArray[i]);
-    a.text(searchArray[i]);
-    $(areaToAddTo).append(a);  
+    a.addClass(newGifs);
+    a.attr('data-type',topics[i]);
+    a.text(topics[i]);
+    $(newGifsSpace).append(a);  
 }
 }
 
-$(document).on('click','.searchButton',function(){
-var type = $(this).data('type');
-var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' +type+ '&api_key=m3P5M7SyE5Iw53bk1sOKbmfwzvHsjp7L&limit=10';
+//when user clicks button, generate new data, use to modify the API call
+//my custom API (make sure to set a limit of 10 for the gifs, and change http to https)
+$(document).on('click','.submitButton',function(){
+var g = $(this).data('type');
+var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' +g+ '&api_key=m3P5M7SyE5Iw53bk1sOKbmfwzvHsjp7L&limit=10';
+
+//make API call, with a GET method, return the response in function
 $.ajax({url:queryURL,method:'GET'})
 .done(function(response){
 for(var i=0;i<response.data.length;i++){
-    var searchDiv = $('<div class="search-item">');
+    var searchDiv = $('<div class="searchBox">');
     var rating = response.data[i].rating;
     var p = $('<p>').text('Rating: '+rating);
     var animated = response.data[i].images.fixed_height.url;
     var still = response.data[i].images.fixed_height_still.url;
-    var image = $('<img>');
+    var image = $('<img>');   
     image.attr('src',still);
     image.attr('data-still',still);
     image.attr('data-animated',animated);
@@ -34,11 +43,13 @@ for(var i=0;i<response.data.length;i++){
     image.addClass('searchImage');
     searchDiv.append(p);
     searchDiv.append(image);
-    $('#searches').append(searchDiv);
+    $('#userSearches').append(searchDiv);
 }
 })
 })
 
+// gifs start as static, upon click it animates, 
+//and upon second click it pauses
 $(document).on('click','.searchImage',function(){
     var state = $(this).attr('data-state');
     if(state == 'still'){
@@ -50,10 +61,12 @@ $(document).on('click','.searchImage',function(){
     }
 })
 
-$('#addSearch').on('click',function(){
+//another function for new search from user
+//user places what is in form and adds into the new search
+$('#newSearch').on('click',function(){
     var newSearch = $('input').eq(0).val();
-    searchArray.push(newSearch);
-    populateButtons(searchArray,'searchButton','#buttonsSpace');
+    topics.push(newSearch);
+    topButtons(topics,'submitButton','#buttonsSpace');
     return false; 
 })
 
