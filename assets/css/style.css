@@ -1,0 +1,71 @@
+body {
+    background: url("../images/pink_rice.png");
+    }
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 80px;
+    color: #079b8e;
+    padding: 40px 0px 0px 20px;
+    margin-bottom: 40px;
+}
+
+button {
+    background:#925292;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 15px;
+    padding: 5px 15px 5px 15px;
+    cursor: pointer;
+    }
+
+label {
+        font-family: 'Lobster', cursive;
+        font-size: 30px;
+        color: #079b8e;
+    }
+
+form {
+    padding: 20px;
+    padding-bottom: 20px;
+    align-content: center;
+}
+
+[type="text"] {
+    width: 50%;
+    margin-bottom: 10px;
+    height: 30px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+[type="submit"] {
+    background:#925292;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    float: left;
+    padding: 5px 15px 5px 15px;
+    cursor: pointer;
+}
+
+#searches {
+    padding: 20px 10px 20px 10px;
+}
+    
+.search-item {
+    float: right;
+    padding: 10px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #925292;  
+    padding: 10px;
+}
+
+
