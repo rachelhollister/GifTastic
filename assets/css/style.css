@@ -5,9 +5,16 @@ body {
 h1 {
     font-family: 'Lobster', cursive;
     font-size: 80px;
+    color: #390855;
+    padding: 20px 0px 0px 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
     color: #079b8e;
-    padding: 40px 0px 0px 20px;
-    margin-bottom: 40px;
+    padding: 20px 0px 20px 20px;
 }
 
 button {
@@ -18,12 +25,11 @@ button {
     font-size: 20px;
     margin: 15px;
     padding: 5px 15px 5px 15px;
-    cursor: pointer;
     }
 
 label {
         font-family: 'Lobster', cursive;
-        font-size: 30px;
+        font-size: 20px;
         color: #079b8e;
     }
 
@@ -49,14 +55,13 @@ form {
     font-size: 20px;
     float: left;
     padding: 5px 15px 5px 15px;
-    cursor: pointer;
 }
 
-#searches {
+#userSearches {
     padding: 20px 10px 20px 10px;
 }
     
-.search-item {
+.searchBox {
     float: right;
     padding: 10px;
 }
@@ -67,5 +72,3 @@ p {
     color: #925292;  
     padding: 10px;
 }
-
-
