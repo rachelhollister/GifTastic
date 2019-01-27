@@ -24,7 +24,7 @@ function topButtons(topics,newGifs,newGifsSpace){
 //my custom API (make sure to set a limit of 10 for the gifs, and change http to https)
 $(document).on('click','.submitButton',function(){
 var g = $(this).data('type');
-var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' +g+ '&api_key=m3P5M7SyE5Iw53bk1sOKbmfwzvHsjp7L&limit=10';
+var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' +g+ '&api_key=m3P5M7SyE5Iw53bk1sOKbmfwzvHsjp7L&limit=10';
 
 //make API call, with a GET method, return the response in function
 $.ajax({url:queryURL,method:'GET'})
